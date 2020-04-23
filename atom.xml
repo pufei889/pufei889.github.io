@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://pufei889.github.io/"/>
-  <updated>2019-11-11T10:47:31.008Z</updated>
+  <updated>2020-04-23T07:33:33.150Z</updated>
   <id>https://pufei889.github.io/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>poscms使用记录</title>
+    <link href="https://pufei889.github.io/2020/poscms%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95.html"/>
+    <id>https://pufei889.github.io/2020/poscms使用记录.html</id>
+    <published>2020-04-23T07:31:08.000Z</published>
+    <updated>2020-04-23T07:33:33.150Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="内容模块自定义段"><a href="#内容模块自定义段" class="headerlink" title="内容模块自定义段"></a>内容模块自定义段</h2><p>高级调用法</p><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;$ci-&gt;module[<span class="string">'field'</span>][<span class="string">'pinpai'</span>][<span class="string">'name'</span>]&#125;</span><br></pre></td></tr></table></figure><p>常规调法</p><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;$pinpai&#125;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;内容模块自定义段&quot;&gt;&lt;a href=&quot;#内容模块自定义段&quot; class=&quot;headerlink&quot; title=&quot;内容模块自定义段&quot;&gt;&lt;/a&gt;内容模块自定义段&lt;/h2&gt;&lt;p&gt;高级调用法&lt;/p&gt;
+&lt;figure class=&quot;highlight php&quot;&gt;&lt;table
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
   
   <entry>
     <title>ECshop使用问题收集</title>
