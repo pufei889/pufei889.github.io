@@ -1,23 +1,699 @@
-{% extends '_layout.swig' %}
-{% import '_macro/post.swig' as post_template %}
-{% import '_macro/sidebar.swig' as sidebar_template %}
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.1.0">
 
-{% block title %}{{ config.title }}{% if theme.index_with_subtitle and config.subtitle %} - {{config.subtitle }}{% endif %}{% endblock %}
 
-{% block page_class %}
-  {% if is_home() %}page-home{% endif -%}
-{% endblock %}
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
 
-{% block content %}
-  <section id="posts" class="posts-expand">
-    {% for post in page.posts %}
-      {{ post_template.render(post, true) }}
-    {% endfor %}
-  </section>
+<link rel="stylesheet" href="/css/main.css">
 
-  {% include '_partials/pagination.swig' %}
-{% endblock %}
 
-{% block sidebar %}
-  {{ sidebar_template.render(false) }}
-{% endblock %}
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" integrity="sha256-DfWjNxDkM94fVBWx1H5BMMp0Zq7luBlV8QRcSES7s+0=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"pufei889.github.io","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.11.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Suche...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="网站建设制作，技术咨询，服务器运维">
+<meta property="og:type" content="website">
+<meta property="og:title" content="代码笔记">
+<meta property="og:url" content="https://pufei889.github.io/index.html">
+<meta property="og:site_name" content="代码笔记">
+<meta property="og:description" content="网站建设制作，技术咨询，服务器运维">
+<meta property="og:locale">
+<meta property="article:author" content="禹小涛">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://pufei889.github.io/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":true,"isPost":false,"lang":"zh","comments":"","permalink":"","path":"index.html","title":""}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>代码笔记</title>
+  
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Navigationsleiste an/ausschalten" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">代码笔记</h1>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-首页"><a href="/" rel="section"><i class="home fa-fw"></i>首页</a></li><li class="menu-item menu-item-关于我们"><a href="/about/" rel="section"><i class="user fa-fw"></i>关于我们</a></li><li class="menu-item menu-item-分类"><a href="/categories/" rel="section"><i class="th fa-fw"></i>分类</a></li><li class="menu-item menu-item-归档"><a href="/archives/" rel="section"><i class="archive fa-fw"></i>归档</a></li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-overview-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Inhaltsverzeichnis
+        </li>
+        <li class="sidebar-nav-overview">
+          Übersicht
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">禹小涛</p>
+  <div class="site-description" itemprop="description">网站建设制作，技术咨询，服务器运维</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">6</span>
+          <span class="site-state-item-name">Artikel</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">schlagwörter</span>
+      </div>
+  </nav>
+</div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://pufei889.github.io/2022/%E7%BA%AFelementor%E5%81%9A%E5%88%87%E6%8D%A2%E6%8C%89%E9%92%AE.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="禹小涛">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="代码笔记">
+      <meta itemprop="description" content="网站建设制作，技术咨询，服务器运维">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 代码笔记">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2022/%E7%BA%AFelementor%E5%81%9A%E5%88%87%E6%8D%A2%E6%8C%89%E9%92%AE.html" class="post-title-link" itemprop="url">纯elementor做切换按钮</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Veröffentlicht am</span>
+      
+
+      <time title="Erstellt: 2022-03-09 17:21:57 / Geändert am: 17:38:01" itemprop="dateCreated datePublished" datetime="2022-03-09T17:21:57+08:00">2022-03-09</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>通过简单代码做到切换按钮报价单的效果</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2022/%E7%BA%AFelementor%E5%81%9A%E5%88%87%E6%8D%A2%E6%8C%89%E9%92%AE.html#more" rel="contents">
+                Weiterlesen &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://pufei889.github.io/2022/WP-Astra%E4%B8%BB%E9%A2%98%E5%B8%B8%E7%94%A8%E6%95%B4%E7%90%86.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="禹小涛">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="代码笔记">
+      <meta itemprop="description" content="网站建设制作，技术咨询，服务器运维">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 代码笔记">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2022/WP-Astra%E4%B8%BB%E9%A2%98%E5%B8%B8%E7%94%A8%E6%95%B4%E7%90%86.html" class="post-title-link" itemprop="url">WP-Astra主题常用整理</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Veröffentlicht am</span>
+
+      <time title="Erstellt: 2022-01-08 17:08:10" itemprop="dateCreated datePublished" datetime="2022-01-08T17:08:10+08:00">2022-01-08</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Bearbeitet am</span>
+      <time title="Geändert am: 2022-04-03 13:35:47" itemprop="dateModified" datetime="2022-04-03T13:35:47+08:00">2022-04-03</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h2 id="禁止更新"><a href="#禁止更新" class="headerlink" title="禁止更新"></a>禁止更新</h2><p>wp-config.php</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_ invoke__">define</span>(<span class="string">&#x27;AUTOMATIC_UPDATER_DISABLED&#x27;</span>, <span class="literal">true</span>);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>functions文件中</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_ invoke__">add_filter</span>(<span class="string">&#x27;pre_site_transient_update_core&#x27;</span>,    <span class="title function_ invoke__">create_function</span>(<span class="string">&#x27;$a&#x27;</span>, <span class="string">&quot;return null;&quot;</span>)); <span class="comment">// 关闭核心提示</span></span><br><span class="line"> </span><br><span class="line"><span class="title function_ invoke__">add_filter</span>(<span class="string">&#x27;pre_site_transient_update_plugins&#x27;</span>, <span class="title function_ invoke__">create_function</span>(<span class="string">&#x27;$a&#x27;</span>, <span class="string">&quot;return null;&quot;</span>)); <span class="comment">// 关闭插件提示</span></span><br><span class="line"> </span><br><span class="line"><span class="title function_ invoke__">add_filter</span>(<span class="string">&#x27;pre_site_transient_update_themes&#x27;</span>,  <span class="title function_ invoke__">create_function</span>(<span class="string">&#x27;$a&#x27;</span>, <span class="string">&quot;return null;&quot;</span>)); <span class="comment">// 关闭主题提示</span></span><br><span class="line"> </span><br><span class="line"><span class="title function_ invoke__">remove_action</span>(<span class="string">&#x27;admin_init&#x27;</span>, <span class="string">&#x27;_maybe_update_core&#x27;</span>);    <span class="comment">// 禁止 WordPress 检查更新</span></span><br><span class="line"> </span><br><span class="line"><span class="title function_ invoke__">remove_action</span>(<span class="string">&#x27;admin_init&#x27;</span>, <span class="string">&#x27;_maybe_update_plugins&#x27;</span>); <span class="comment">// 禁止 WordPress 更新插件</span></span><br><span class="line"> </span><br><span class="line"><span class="title function_ invoke__">remove_action</span>(<span class="string">&#x27;admin_init&#x27;</span>, <span class="string">&#x27;_maybe_update_themes&#x27;</span>);  <span class="comment">// 禁止 WordPress 更新主题</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2022/WP-Astra%E4%B8%BB%E9%A2%98%E5%B8%B8%E7%94%A8%E6%95%B4%E7%90%86.html#more" rel="contents">
+                Weiterlesen &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://pufei889.github.io/2020/poscms%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="禹小涛">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="代码笔记">
+      <meta itemprop="description" content="网站建设制作，技术咨询，服务器运维">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 代码笔记">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2020/poscms%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95.html" class="post-title-link" itemprop="url">poscms使用记录</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Veröffentlicht am</span>
+
+      <time title="Erstellt: 2020-04-23 15:31:08" itemprop="dateCreated datePublished" datetime="2020-04-23T15:31:08+08:00">2020-04-23</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Bearbeitet am</span>
+      <time title="Geändert am: 2020-07-13 01:02:04" itemprop="dateModified" datetime="2020-07-13T01:02:04+08:00">2020-07-13</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h2 id="内容模块自定义段"><a href="#内容模块自定义段" class="headerlink" title="内容模块自定义段"></a>内容模块自定义段</h2><p>高级调用法(别名)</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;<span class="variable">$ci</span>-&gt;module[<span class="string">&#x27;field&#x27;</span>][<span class="string">&#x27;pinpai&#x27;</span>][<span class="string">&#x27;name&#x27;</span>]&#125;</span><br></pre></td></tr></table></figure>
+<p>常规调法</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;<span class="variable">$pinpai</span>&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="poscms-列表调用附表"><a href="#poscms-列表调用附表" class="headerlink" title="poscms 列表调用附表"></a>poscms 列表调用附表</h2><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&#123;php <span class="variable">$table</span>= SITE_ID.<span class="string">&#x27;_&#x27;</span>.MOD_DIR.<span class="string">&#x27;_data_0&#x27;</span>;&#125;</span><br><span class="line">&#123;module catid=<span class="variable">$catid</span> join=<span class="variable">$table</span> on=id order=updatetime page=<span class="number">1</span> pagesize=<span class="number">12</span>&#125;</span><br><span class="line">                    &lt;li&gt;</span><br><span class="line">                        &lt;a href=<span class="string">&quot;<span class="subst">&#123;$t.url&#125;</span>&quot;</span> title=<span class="string">&quot;<span class="subst">&#123;$t.title&#125;</span>&quot;</span>&gt;</span><br><span class="line">						  &lt;div <span class="class"><span class="keyword">class</span>=&quot;<span class="title">pro_img</span>&quot;&gt;&lt;<span class="title">img</span> <span class="title">src</span>=&quot;</span>&#123;<span class="keyword">if</span> <span class="variable">$t</span>.thumb&#125;&#123;<span class="title function_ invoke__">dr_get_file</span>(<span class="variable">$t</span>.thumb)&#125;&#123;<span class="keyword">else</span>&#125;<span class="meta">&lt;?php</span> <span class="keyword">echo</span> <span class="title function_ invoke__">dr_get_content_img</span>(<span class="variable">$t</span>.content)[<span class="number">0</span>]; <span class="meta">?&gt;</span>&#125;&#123;/<span class="keyword">if</span>&#125;<span class="string">&quot; alt=&quot;</span>&#123;<span class="variable">$t</span>.title&#125;<span class="string">&quot;&gt;&lt;/div&gt;</span></span><br><span class="line"><span class="string">                            &lt;p&gt;<span class="subst">&#123;$t.title&#125;</span>&lt;/p&gt;</span></span><br><span class="line"><span class="string">                            &lt;span&gt;&lt;/span&gt;</span></span><br><span class="line"><span class="string">                        &lt;/a&gt;</span></span><br><span class="line"><span class="string">                    &lt;/li&gt;</span></span><br><span class="line"><span class="string"> &#123;/module&#125;</span></span><br></pre></td></tr></table></figure>
+
+<p>##面包屑导航</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&lt;li&gt;&lt;a href=<span class="string">&quot;&#123;SITE_URL&#125;&quot;</span>&gt;首页&lt;/a&gt; &gt; &lt;/li&gt;</span><br><span class="line">&#123;<span class="keyword">if</span> <span class="title function_ invoke__">defined</span>(<span class="string">&#x27;IS_SHARE&#x27;</span>) &amp;&amp; !IS_SHARE&#125;</span><br><span class="line">&lt;li&gt;&lt;a href=<span class="string">&quot;&#123;MODULE_URL&#125;&quot;</span>&gt;&#123;MODULE_NAME&#125;&lt;/a&gt; &gt; &lt;/li&gt;</span><br><span class="line">&#123;/<span class="keyword">if</span>&#125;</span><br><span class="line">&#123;<span class="title function_ invoke__">dr_catpos</span>(<span class="variable">$catid</span>, <span class="string">&#x27;&#x27;</span>, <span class="number">1</span>, <span class="string">&#x27;&lt;li&gt;&lt;a href=&quot;&#123;url&#125;&quot;&gt;&#123;name&#125;&lt;/a&gt; &gt; &lt;/li&gt;&#x27;</span>.PHP_EOL)&#125;</span><br><span class="line">			</span><br></pre></td></tr></table></figure>
+
+<h2 id="分页"><a href="#分页" class="headerlink" title="分页"></a>分页</h2><p>分页代码</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;pagination&quot;</span>&gt;</span></span><br><span class="line">	&#123;$pages&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>分页css</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.pagination</span> &#123;</span><br><span class="line">    <span class="attribute">text-align</span>: center;</span><br><span class="line">    <span class="attribute">display</span>: flex;</span><br><span class="line">    <span class="attribute">flex-wrap</span>: nowrap;</span><br><span class="line">    <span class="attribute">justify-content</span>: center;</span><br><span class="line">    <span class="attribute">background</span>: <span class="number">#fff</span>;</span><br><span class="line">    <span class="attribute">color</span>: <span class="number">#919191</span>;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">10px</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.pagination</span> <span class="selector-tag">li</span> <span class="selector-tag">a</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: <span class="number">#919191</span>;</span><br><span class="line">    <span class="attribute">display</span>: inline-block;</span><br><span class="line">    <span class="attribute">border</span>: <span class="number">1px</span> solid <span class="number">#d3d3d3</span>;</span><br><span class="line">    <span class="attribute">min-width</span>: <span class="number">32px</span>;</span><br><span class="line">    <span class="attribute">padding-left</span>: <span class="number">5px</span>;</span><br><span class="line">    <span class="attribute">padding-right</span>: <span class="number">5px</span>;</span><br><span class="line">    <span class="attribute">margin</span>: <span class="number">0</span> <span class="number">3px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.pagination</span> <span class="selector-tag">li</span><span class="selector-class">.page-active</span> <span class="selector-tag">a</span> &#123;</span><br><span class="line">    <span class="attribute">background</span>: <span class="number">#000</span>;</span><br><span class="line">    <span class="attribute">color</span>: <span class="number">#fff</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://pufei889.github.io/2019/ECshop%E4%BD%BF%E7%94%A8%E9%97%AE%E9%A2%98%E6%94%B6%E9%9B%86.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="禹小涛">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="代码笔记">
+      <meta itemprop="description" content="网站建设制作，技术咨询，服务器运维">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 代码笔记">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2019/ECshop%E4%BD%BF%E7%94%A8%E9%97%AE%E9%A2%98%E6%94%B6%E9%9B%86.html" class="post-title-link" itemprop="url">ECshop使用问题收集</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Veröffentlicht am</span>
+      
+
+      <time title="Erstellt: 2019-11-11 17:16:44 / Geändert am: 18:47:31" itemprop="dateCreated datePublished" datetime="2019-11-11T17:16:44+08:00">2019-11-11</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>ecshop使用问题收集整理</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2019/ECshop%E4%BD%BF%E7%94%A8%E9%97%AE%E9%A2%98%E6%94%B6%E9%9B%86.html#more" rel="contents">
+                Weiterlesen &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://pufei889.github.io/2019/WordPress%E5%B8%B8%E7%94%A8%E6%A0%87%E7%AD%BE%E7%AC%94%E8%AE%B0.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="禹小涛">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="代码笔记">
+      <meta itemprop="description" content="网站建设制作，技术咨询，服务器运维">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 代码笔记">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2019/WordPress%E5%B8%B8%E7%94%A8%E6%A0%87%E7%AD%BE%E7%AC%94%E8%AE%B0.html" class="post-title-link" itemprop="url">WordPress常用标签笔记</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Veröffentlicht am</span>
+
+      <time title="Erstellt: 2019-11-08 00:52:49" itemprop="dateCreated datePublished" datetime="2019-11-08T00:52:49+08:00">2019-11-08</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Bearbeitet am</span>
+      <time title="Geändert am: 2021-03-11 21:11:10" itemprop="dateModified" datetime="2021-03-11T21:11:10+08:00">2021-03-11</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>常用标签汇总；如果对你有用收藏，注意部分标签是需要在function中添加代码的；<br>如果你使用调用未生效可以联系我提供function文件</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2019/WordPress%E5%B8%B8%E7%94%A8%E6%A0%87%E7%AD%BE%E7%AC%94%E8%AE%B0.html#more" rel="contents">
+                Weiterlesen &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://pufei889.github.io/2019/%E5%B8%B8%E7%94%A8css%E6%94%B6%E9%9B%86.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="禹小涛">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="代码笔记">
+      <meta itemprop="description" content="网站建设制作，技术咨询，服务器运维">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | 代码笔记">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2019/%E5%B8%B8%E7%94%A8css%E6%94%B6%E9%9B%86.html" class="post-title-link" itemprop="url">常用css收集</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Veröffentlicht am</span>
+
+      <time title="Erstellt: 2019-09-21 12:24:01" itemprop="dateCreated datePublished" datetime="2019-09-21T12:24:01+08:00">2019-09-21</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Bearbeitet am</span>
+      <time title="Geändert am: 2020-07-17 14:31:20" itemprop="dateModified" datetime="2020-07-17T14:31:20+08:00">2020-07-17</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>常用css收集</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2019/%E5%B8%B8%E7%94%A8css%E6%94%B6%E9%9B%86.html#more" rel="contents">
+                Weiterlesen &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">禹小涛</span>
+</div>
+  <div class="powered-by">Erstellt mit  <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+  <script src="/js/third-party/fancybox.js"></script>
+
+
+  
+
+
+
+
+
+</body>
+</html>
